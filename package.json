@@ -1,0 +1,21 @@
+{
+  "name": "scraper",
+  "version": "1.0.0",
+  "description": "web-scraper for xbox-now",
+  "main": "index.js",
+  "author": "biomayak <biomayak@yandex.ru>",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "node prompt.js && mkdir ./reports",
+    "parse": "node index.js"
+  },
+  "dependencies": {
+    "@everapi/currencyapi-js": "^1.0.6",
+    "axios": "^1.5.1",
+    "cheerio": "^1.0.0-rc.12",
+    "dotenv": "^16.3.1",
+    "exceljs": "^4.3.0",
+    "inquirer": "^9.2.11"
+  }
+}
