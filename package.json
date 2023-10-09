@@ -7,7 +7,7 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "build": "node prompt.js && mkdir ./reports",
+    "build": "node prompt.js && mkdir reports",
     "parse": "node index.js"
   },
   "dependencies": {
