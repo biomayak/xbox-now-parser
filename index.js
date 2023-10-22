@@ -73,7 +73,7 @@ async function parseHTML() {
                 sellPrice = lowPrice + lowPrice * 0.2;
             }
 
-            sellPrice = Math.round(sellPrice);
+            sellPrice = roundToNinety(sellPrice);
 
             game['highPrice'] = highPrice;
             game['lowPrice'] = lowPrice;
@@ -124,6 +124,16 @@ function createXlsx(games){
         console.log(`✅    Сохранено в reports/games_${day}_${month}_${year}.xlsx!`);
     });
 }
+
+/**
+ * Ceils number to closest number that ends with '90' (190, 90, 290, 1990, etc.). 
+ * 
+ * @param {number} num - Number that is needed to be ceiled
+ * @returns {number} - Ceiled number
+ */
+const roundToNinety = function (num) {
+    return (Math.ceil((num+10)/100)*100-10);
+};
 
 // Parse and create xlsx
 createXlsx(await parseHTML());
